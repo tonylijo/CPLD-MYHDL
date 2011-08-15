@@ -1,0 +1,25 @@
+from myhdl import Signal, always_comb, Simulation,delay,instance,intbv,bin
+
+def full_adder(A,B,C_in,Sum_out,C_out):
+    @always_comb
+    def logic():
+        Sum_out.next = A ^ B ^ C_in
+        C_out.next = (A & B) ^ (C_in & (A ^ B))
+    return logic
+
+from random import randomrange
+
+def testBench():
+    A,B,C_in,Sum_out,C_out = [Signal(bool(0)) for i in range(5)]
+    FA_inst = full_adder(A,B,C_in,Sum_out,C_out)
+    @instance
+    def simulate():
+        A.next,B.next,C_in.next = [randomrange(2) for i in range(3)]
+        yield delay(10)
+        print "A:"+bin(A,1)+"B:"+bin(B,1)+"C_in:"+bin(C_in,1)+"Sum_out:"+bin(Sum_out,1)+"C_out:"+bin(C_out,1)
+    return FA_inst,simulate
+
+inst = testBench()
+sim = Simulation(inst)
+sim.run()
+        

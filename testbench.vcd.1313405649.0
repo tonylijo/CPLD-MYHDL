@@ -1,0 +1,92 @@
+$date
+    Mon Aug 15 16:24:09 2011
+$end
+$version
+    MyHDL 0.7
+$end
+$timescale
+    1ns
+$end
+
+$scope module testbench $end
+$var reg 1 ! reset_n $end
+$var reg 2 " state $end
+$var reg 1 # clk $end
+$var reg 1 $ syncFlag $end
+$var reg 1 % SOF $end
+$scope module framectrl $end
+$var real 1 & index $end
+$var reg 1 # clk $end
+$var reg 1 % SOF $end
+$var reg 2 " state $end
+$var reg 1 ! reset_n $end
+$var reg 1 $ syncFlag $end
+$upscope $end
+$upscope $end
+
+$enddefinitions $end
+$dumpvars
+1!
+sSEARCH "
+0#
+0$
+0%
+s0 &
+$end
+#10
+1#
+s1 &
+#20
+0#
+#30
+1#
+#40
+0#
+#50
+1#
+1$
+#60
+0#
+#70
+1#
+0$
+sCONFIRM "
+#80
+0#
+#90
+1#
+s2 &
+#100
+0#
+#110
+1#
+s3 &
+#120
+0#
+#130
+1#
+s4 &
+#140
+0#
+#150
+1#
+s5 &
+#160
+0#
+#170
+1#
+s6 &
+#180
+0#
+#190
+1#
+s7 &
+#200
+0#
+#210
+1#
+s0 &
+#220
+0#
+#230
+1#

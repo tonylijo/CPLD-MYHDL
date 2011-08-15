@@ -1,0 +1,67 @@
+$date
+    Mon Aug 15 23:38:58 2011
+$end
+$version
+    MyHDL 0.7
+$end
+$timescale
+    1ns
+$end
+
+$scope module testBench_FA $end
+$var reg 1 ! A $end
+$var reg 1 " Sum_out $end
+$var reg 1 # B $end
+$var reg 1 $ C_in $end
+$var reg 1 % C_out $end
+$scope module FA_inst $end
+$var reg 1 ! A $end
+$var reg 1 % C_out $end
+$var reg 1 # B $end
+$var reg 1 $ C_in $end
+$var reg 1 " Sum_out $end
+$upscope $end
+$upscope $end
+
+$enddefinitions $end
+$dumpvars
+0!
+0"
+0#
+0$
+0%
+$end
+1#
+1$
+1%
+#10
+1!
+1"
+#20
+0#
+0"
+#30
+#40
+0!
+0$
+0%
+#50
+#60
+1!
+1$
+1%
+#70
+0!
+1#
+0$
+1"
+0%
+#80
+1$
+0"
+1%
+#90
+0#
+0$
+0%
+#100

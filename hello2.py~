@@ -1,0 +1,21 @@
+from myhdl import Signal, delay, always, now, Simulation
+
+def ClkDriver(clk):
+    halfPeroid = delay(10)
+    
+    @always(halfperoid)
+    def driveClk():
+        clk.next = not clk
+    return driveClk
+
+def HelloWorld(clk):
+    @always(clk.posedge)
+    def SayHello():
+        print "%s Hello World!!!" % now()
+    return SayHello
+
+clk = Signal(0)
+clkdriver_inst = ClkDriver(clk)    
+hello_inst = HelloWorld(clk)
+sim = Simulation(clkdriver_inst, hello_inst)
+sim.run(50)
